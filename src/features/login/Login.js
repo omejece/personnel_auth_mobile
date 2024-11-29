@@ -12,14 +12,14 @@ import {
 import AppStyle from '../../statics/style/appStyle';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Api from '../../app/api';
-Api._baseUrl = 'http://66.29.155.141:7000';
+Api._baseUrl = 'https://meteradmin.buywater.store';
 import DBStore from '../../app/DBStore';
 import { setCredentials } from './AuthSlice';
 DBStore.initialize();
 
 const Login = (props)=>{
-    const [email,setEmail] = useState("omejece@gmail.com");
-    const [password,setPassword] = useState("cceeoo33");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
     const [loginStatus,setLoginStatus] = useState("");
     const dispatch = useDispatch();
     

@@ -27,10 +27,8 @@ const About = (props)=>{
             <View style={{borderWidth:1,borderColor:'black',width:'100%'}}></View>
             <View style={styles.bodyContainer}>
                 <Text style={{color:'black',fontSize:15}}>
-                    Personnel authentication system is a system designed by LIEUT TAHIR, with a view to solving the problem of fake personnels, and reduces the bad names posed by these 
-                    fake millitary personnels, so as to save lives and property, 
-                    it is a well known fact that the only means of authentication of personnels available to the personnels of the Army is the use of id card which these
-                    fake personnel have advanced to the point of making fake Id card, thus making it very difficult to detect fake personnels.
+                    Personnel ID card authentication system is a system designed by Lt AM TahirThis with the view of solving the problem of authentication of military personnel ID cards. 
+                    This is aimed at addressing the challenges of imposters claiming to be military personnel to create bad image for the military in face of the civil society.
                 </Text>
             </View>
 

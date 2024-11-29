@@ -5,9 +5,9 @@ import { Alert } from "react-native";
 DBStore.initialize();
 
 const Api = {
-     _baseUrl: "http://66.29.155.141:7000",
+     _baseUrl: "https://meteradmin.buywater.store",
      get:async (url,data)=>{
-        var token = await DBStore.getToken();
+        var token = "";//await DBStore.getToken();
         return new Promise((resolve,reject)=>{
             axios.get(
                 Api._baseUrl+url,
@@ -21,7 +21,7 @@ const Api = {
      },
 
      post: async(url,data)=>{
-        var token =  await DBStore.getToken();
+        var token = "";//await DBStore.getToken();
         return new Promise((resolve,reject)=>{
             axios.post(
                 Api._baseUrl+url,
@@ -39,7 +39,7 @@ const Api = {
 
 
      delete: async(url,data)=>{
-        var token = await DBStore.getToken();
+        var token = "";//await DBStore.getToken();
         return new Promise((resolve,reject)=>{
             axios.delete(
                 Api._baseUrl+url,
@@ -53,7 +53,7 @@ const Api = {
      },
 
      put: async(url,data)=>{
-        var token = await DBStore.getToken();
+        var token = "";//await DBStore.getToken();
         return new Promise((resolve,reject)=>{
             axios.put(
                 Api._baseUrl+url,
@@ -68,7 +68,7 @@ const Api = {
      },
 
      patch: async(url,data)=>{
-        var token = await DBStore.getToken();
+        var token = "";//await DBStore.getToken();
         return new Promise((resolve,reject)=>{
             axios.patch(
                 Api._baseUrl+url,

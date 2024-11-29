@@ -18,6 +18,10 @@ import PersonnelApi from './personnelApi';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import { RNCamera } from 'react-native-camera';
 
+import CryptoJS from 'crypto-js';
+
+const secretKey = 'thwjw7889w7w89w9w0ww9w0>7jdj;68362n2u2';
+
 const Personnel = (props)=>{
     const dispatch = useDispatch();
     const [authPrsonnel,setAuthPrsonnel] = useState(null);
@@ -29,7 +33,9 @@ const Personnel = (props)=>{
     
     const onSuccess = async (e) => {
         try{
-            const result = await PersonnelApi.getPersonnel(e.data);
+            console.log(e.data);
+            console.log(decryptData(e.data));
+            const result = await PersonnelApi.getPersonnel(decryptData(e.data));
             if(result.success){
                 setAuthPrsonnel(result.data);
             }
@@ -42,6 +48,17 @@ const Personnel = (props)=>{
             
         }
     };
+
+
+    const encryptData = (data) => {
+        return CryptoJS.AES.encrypt(data, secretKey).toString();
+    };
+   
+   
+   const decryptData = (encryptedData) => {
+        const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+        return bytes.toString(CryptoJS.enc.Utf8);
+   };
 
 
     const resetPage = ()=>{
